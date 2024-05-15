@@ -20,11 +20,11 @@ This project implements a car park management system for a university using Spri
 - System validation of license plate and user permissions.
 - Automatic update of available parking slots after entry/exit.
 
-### Payment System (optional):
+### Payment System:
 - Integration of various payment methods for parking duration.
 - Track parking fees and generate reports (admin only).
 
-### Notifications (optional):
+### Notifications:
 - Alert users nearing parking session expiry.
 - Inform users of full car park status.
 
@@ -32,16 +32,6 @@ This project implements a car park management system for a university using Spri
 - Search for available parking by location (multi-level parking).
 - Access historical parking data (user and admin).
 - Manage season parking permits (optional, admin only).
-
-## Mockups (Wireframes)
-
-Create mockups for:
-- User registration/login.
-- User dashboard with role-based parking options (reservation, real-time availability).
-- Real-time car park status with available slots.
-- Entry/Exit scan interface (license plate recognition/manual input).
-- Payment interface (if applicable).
-- Admin panel for user management, car park status, and reports (optional).
 
 ## System Behavior and REST API Endpoints
 
