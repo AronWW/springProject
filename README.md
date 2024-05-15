@@ -47,11 +47,11 @@ This project implements a car park management system for a university using Spri
 - POST /entry (with license plate): Validates license plate and user permission, updates available slots (increment -1).
 - POST /exit (with license plate): Validates license plate, updates available slots (increment +1).
 
-### Payment System (optional):
+### Payment System:
 - POST /payments: Processes parking fee payment for a specific user and duration.
 - GET /reports/parking (Admin only): Retrieves parking fee reports.
 
-### Notifications (optional):
+### Notifications:
 - Implement push notifications or SMS alerts triggered by server-side logic.
 
 ### Additional Endpoints:
