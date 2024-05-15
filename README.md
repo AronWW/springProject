@@ -1,55 +1,71 @@
+# University Car Park Management System (Spring Project)
+## Overview
 
-University Car Park Management System (UCPMS)
-This project implements a University Car Park Management System using Java Spring framework.
+This project implements a car park management system for a university using Spring technologies. It facilitates user registration, parking availability display, entry/exit recording, and optional functionalities like reservations and payments.
 
-Project Overview
-The UCPMS allows university staff and students to manage parking activities. Users can register, view real-time parking availability, initiate entry/exit, and pay fees. The system also offers functionalities for administrators (optional).
+## Functional Requirements
 
-Technologies
-Java Spring Framework
-(Optional) Database (e.g., MySQL)
-(Optional) Payment Gateway Integration
-Features
-User Registration (Students & Staff)
-Vehicle Registration
-Real-time Parking Availability
-Parking Entry/Exit with Payment Processing
-Parking History
-(Optional) Permit Management
-(Optional) Admin Dashboard & Reports
-Getting Started
-Prerequisites
+User Management:
+User registration (students, faculty, staff) with basic information (name, email, license plate).
+Assigning user roles with varying permissions.
+Car Park Management:
+Define total parking slots and maintain real-time availability.
+Display available parking spaces in real-time.
+Implement optional parking slot reservation (based on user role).
+Entry/Exit Management:
+License plate scanning upon entry and exit.
+System validation of license plate and user permissions.
+Automatic update of available parking slots after entry/exit.
+Payment System (optional):
+Integration of various payment methods for parking duration.
+Track parking fees and generate reports (admin only).
+Notifications (optional):
+Alert users nearing parking session expiry.
+Inform users of full car park status.
+Additional Features:
+Search for available parking by location (multi-level parking).
+Access historical parking data (user and admin).
+Manage season parking permits (optional, admin only).
+## Mockups (Wireframes)
 
-Java Development Kit (JDK)
-Maven
-Installation
+Create mockups for:
+User registration/login.
+User dashboard with role-based parking options (reservation, real-time availability).
+Real-time car park status with available slots.
+Entry/Exit scan interface (license plate recognition/manual input).
+Payment interface (if applicable).
+Admin panel for user management, car park status, and reports (optional).
+## System Behavior and REST API Endpoints
+
+User Management:
+POST /users: Registers a new user with basic information.
+GET /users/{id} (Admin only): Retrieves user details by ID.
+PUT /users/{id} (User can update own profile): Updates user information.
+Car Park Management:
+GET /carpark/status: Retrieves current total and available parking slots.
+Entry/Exit Management:
+POST /entry (with license plate): Validates license plate and user permission, updates available slots (increment -1).
+POST /exit (with license plate): Validates license plate, updates available slots (increment +1).
+Payment System (optional):
+POST /payments: Processes parking fee payment for a specific user and duration.
+GET /reports/parking (Admin only): Retrieves parking fee reports.
+Notifications (optional):
+Implement push notifications or SMS alerts triggered by server-side logic.
+Additional Endpoints:
+GET /carpark/search?location={location} (optional): Search for available parking spaces based on location.
+GET /history/parking (User can access own history): Retrieves historical parking data for a user.
+POST /permits (Admin only): Manages season parking permits.
+## Technologies Used
+
+Java
+Spring Boot
+Spring Security
+Spring Data JPA
+MySQL or PostgreSQL (database)
+License plate recognition system integration (optional)
+## Getting Started
 
 Clone this repository.
-Install dependencies using mvn install.
-Running the Application
-
-(Optional) Configure database connection details.
-Run the Spring application using your preferred IDE or mvn spring-boot:run.
-API Endpoints (RESTful)
-User Management:
-
-POST /users - Register a new user
-GET /users/{id} - Get user details by ID
-Vehicle Management:
-
-POST /vehicles - Register a new vehicle
-GET /vehicles/{id} - Get vehicle details by ID
-Parking Management:
-
-GET /parking/availability - Get real-time parking availability
-POST /parking/entry - Initiate parking entry for a user
-POST /parking/exit - Initiate parking exit for a user
-GET /parking/history/{userId} - Get user's parking history
-Payment Processing:
-
-POST /payments - Process parking fee payment
-Additional Endpoints (Optional):
-
-GET /permits - Get information on permit programs (if applicable)
-GET /reports - Generate reports on parking activity (if applicable)
-Note: Refer to the code for detailed implementation of these endpoints.
+Ensure necessary tools are installed (Java, Maven or Gradle).
+Configure a database connection in application.properties.
+Run the application using Maven or Gradle commands.
